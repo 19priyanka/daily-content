@@ -1,0 +1,107 @@
+{
+  "version": 2,
+  "words": [
+    {
+      "term": "ephemeral",
+      "definition": "Lasting for a very short time.",
+      "example": "Social media stories are ephemeral — gone in a day."
+    },
+    {
+      "term": "salient",
+      "definition": "Most noticeable or important.",
+      "example": "She summarized the salient points of the report."
+    },
+    {
+      "term": "candor",
+      "definition": "Honest and direct expression; frankness.",
+      "example": "I appreciated the candor in his feedback."
+    },
+    {
+      "term": "nascent",
+      "definition": "Just coming into existence and beginning to develop.",
+      "example": "The startup is still in its nascent stage."
+    },
+    {
+      "term": "tenable",
+      "definition": "Able to be defended against attack or objection.",
+      "example": "That argument is no longer tenable given the new data."
+    },
+    {
+      "term": "ubiquitous",
+      "definition": "Present, appearing, or found everywhere.",
+      "example": "Smartphones are now ubiquitous in daily life."
+    },
+    {
+      "term": "pragmatic",
+      "definition": "Dealing with things sensibly and practically.",
+      "example": "She took a pragmatic approach and shipped the simplest version first."
+    },
+    {
+      "term": "cogent",
+      "definition": "Clear, logical, and convincing.",
+      "example": "He made a cogent argument for cutting the feature."
+    },
+    {
+      "term": "mitigate",
+      "definition": "To make something less severe or harmful.",
+      "example": "Caching helps mitigate the load on the server."
+    },
+    {
+      "term": "ostensible",
+      "definition": "Stated or appearing to be true, but not necessarily so.",
+      "example": "The ostensible reason for the delay was weather."
+    }
+  ],
+  "facts": [
+    {
+      "category": "tech",
+      "title": "What merge sort does",
+      "body": "Merge sort splits a list in half repeatedly until each piece is one item, then merges the pieces back in order. It reliably runs in O(n log n) time regardless of the input."
+    },
+    {
+      "category": "science",
+      "title": "Why the sky is blue",
+      "body": "Sunlight hits air molecules and scatters. Shorter blue wavelengths scatter far more than red, so blue light reaches your eyes from all over the sky."
+    },
+    {
+      "category": "history",
+      "title": "The Rosetta Stone",
+      "body": "Discovered in 1799, it carried the same decree in three scripts. Because one was Greek, scholars could finally decode Egyptian hieroglyphs."
+    },
+    {
+      "category": "tech",
+      "title": "What a hash function is",
+      "body": "A hash function turns any input into a fixed-size string of characters. The same input always yields the same output, and a tiny change to the input changes it completely."
+    },
+    {
+      "category": "science",
+      "title": "Why we have seasons",
+      "body": "Earth's axis is tilted about 23.5 degrees. Seasons come from that tilt changing how directly sunlight hits each hemisphere — not from distance to the Sun."
+    },
+    {
+      "category": "tech",
+      "title": "What an API is",
+      "body": "An API is a contract: it defines how one program can ask another for data or actions without knowing how the other works inside. You call it the same way even as the internals change."
+    },
+    {
+      "category": "science",
+      "title": "Why ice floats",
+      "body": "Water is unusual: it expands as it freezes, so ice is less dense than liquid water. That is why ice floats and lakes freeze from the top down."
+    },
+    {
+      "category": "history",
+      "title": "The printing press",
+      "body": "Gutenberg's movable-type press, around 1440, made books cheap to copy. Ideas spread far faster, fueling the Reformation and the scientific revolution."
+    },
+    {
+      "category": "tech",
+      "title": "What caching is",
+      "body": "A cache keeps a copy of expensive-to-fetch data close by, so repeat requests are served fast. The tradeoff is freshness: a cached copy can go stale."
+    },
+    {
+      "category": "science",
+      "title": "Why the moon has phases",
+      "body": "The moon does not make its own light — it reflects the Sun's. As it orbits Earth, we see different fractions of its lit half, from new moon to full."
+    }
+  ]
+}
