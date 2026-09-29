@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily — content feed</title>
+  <style>
+    body { font: 16px/1.5 -apple-system, system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; color: #111; }
+    h1 { font-size: 1.4rem; }
+    .meta { color: #666; font-size: 0.85rem; }
+    .item { border: 1px solid #eee; border-radius: 10px; padding: 0.75rem 1rem; margin: 0.75rem 0; }
+    .label { text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.7rem; color: #888; }
+    .term, .title { font-weight: 700; font-size: 1.1rem; margin: 0.2rem 0; }
+    .example { color: #777; font-style: italic; }
+    a { color: #06c; }
+  </style>
+</head>
+<body>
+  <h1>Daily — content feed</h1>
+  <p class="meta">Raw file: <a href="content.json">content.json</a>. This page just renders it so the deploy is visible at a glance. The app reads <code>content.json</code> directly, not this page.</p>
+  <div id="status" class="meta">Loading…</div>
+  <div id="out"></div>
+
+  <script>
+    fetch('content.json', { cache: 'no-store' })
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(data => {
+        document.getElementById('status').textContent =
+          'version ' + data.version + ' · ' + data.words.length + ' words · ' + data.facts.length + ' facts';
+        const out = document.getElementById('out');
+        data.words.forEach(w => {
+          out.insertAdjacentHTML('beforeend',
+            '<div class="item"><div class="label">Word</div>' +
+            '<div class="term"></div><div class="def"></div>' +
+            (w.example ? '<div class="example"></div>' : '') + '</div>');
+          const el = out.lastElementChild;
+          el.querySelector('.term').textContent = w.term;
+          el.querySelector('.def').textContent = w.definition;
+          if (w.example) el.querySelector('.example').textContent = w.example;
+        });
+        data.facts.forEach(f => {
+          out.insertAdjacentHTML('beforeend',
+            '<div class="item"><div class="label">Fact · </div>' +
+            '<div class="title"></div><div class="body"></div></div>');
+          const el = out.lastElementChild;
+          el.querySelector('.label').textContent = 'Fact · ' + f.category;
+          el.querySelector('.title').textContent = f.title;
+          el.querySelector('.body').textContent = f.body;
+        });
+      })
+      .catch(e => { document.getElementById('status').textContent = 'Failed to load content.json: ' + e.message; });
+  </script>
+</body>
+</html>
